@@ -1,0 +1,32 @@
+.section-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70vh;
+}
+
+.horiz-center {
+  display: flex;
+  justify-content: center;
+}
+
+.login-container {
+  width: 30rem;
+}
+
+.small-margin-top {
+  margin-top: 1rem;
+}
+
+.setting-text {
+  font-size: 1.5rem;
+}
+
+.content-padding {
+  padding: 1.5rem 2rem 0 2rem;
+}
+
+.all-menu-list>li {
+  font-size: 2rem;
+  margin-top: 1rem;
+}

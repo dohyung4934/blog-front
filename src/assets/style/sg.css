@@ -1,0 +1,17 @@
+.guide-img {
+  width: 20rem;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+}
+
+.guide-bold {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.guide-text {
+  font-size: 1.6rem;
+}
