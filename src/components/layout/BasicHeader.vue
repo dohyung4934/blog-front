@@ -22,9 +22,9 @@ const props = defineProps({
 
 <template>
   <header class="page-header box-padding">
-    <div v-if="props.showBack" class="page-header-text-icon flex-fit">&lt;</div>
+    <button v-if="props.showBack" class="page-header-text-icon flex-fit">&lt;</button>
     <h3 class="page-header-title">{{ props.title }}</h3>
-    <div v-if="props.showMore" class="page-header-text-icon flex-fit">⋮</div>
-    <div class="page-header-text-icon flex-fit"><button>三</button></div>
+    <button v-if="props.showMore" class="page-header-text-icon flex-fit">⋮</button>
+    <button class="page-header-text-icon flex-fit">三</button>
   </header>
 </template>

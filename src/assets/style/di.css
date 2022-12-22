@@ -10,9 +10,23 @@
 }
 
 .cal-date {
-  height: 5rem;
+  font-size: 1.6rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.6rem;
+  height: 4.5rem;
+}
+
+.text-center {
+  display: flex;
+  justify-content: center;
+}
+
+.cal-dot {
+  padding-bottom: 1rem;
+}
+
+.cal-dot-hide {
+  color: white;
 }

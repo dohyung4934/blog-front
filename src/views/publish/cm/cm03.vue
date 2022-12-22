@@ -26,12 +26,12 @@ const mbrNm = ref('홍길동')
         </div>
       </header>
 
-      <section class="content-padding">
+      <nav class="content-padding">
         <ul class="all-menu-list">
           <li><a href="#">서비스 소개</a></li>
           <li><a href="#">일기장</a></li>
         </ul>
-      </section>
+      </nav>
     </template>
     <!-- // 로그인 상태 -->
 
