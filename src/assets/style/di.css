@@ -30,3 +30,12 @@
 .cal-dot-hide {
   color: white;
 }
+
+.post {
+  font-size: 2rem;
+  padding: 2rem;
+}
+
+.post>p {
+  margin-bottom: 1rem;
+}

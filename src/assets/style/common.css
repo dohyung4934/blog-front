@@ -16,3 +16,35 @@ body {
   height: 3.5rem;
   font-size: 1.5rem;
 }
+
+.bottomsheet {
+  background-color: #FFFFFF;
+  position: fixed;
+  top: 60vh;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 1.6rem 1.6rem 0 0;
+  padding: 2rem;
+}
+
+.horizontal-center {
+  display: flex;
+  justify-content: center;
+}
+
+.bottomsheet-handle {
+  width: 8.6rem;
+  height: 0.4rem;
+  background-color: rgb(201, 201, 201);
+  margin-bottom: 2rem;
+}
+
+.dim {
+  background-color: rgba(0, 0, 0, 0.62);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}

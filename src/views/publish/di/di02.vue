@@ -4,5 +4,12 @@ import BasicHeader from '@/components/layout/BasicHeader.vue'
 </script>
 
 <template>
-  <basic-header title="2022년 12월 4일 바보" show-back show-more />
+  <basic-header title="2022년 12월 4일" show-back show-more />
+  <section class="post">
+    <p>안녕하세요</p>
+    <p>안녕하세요</p>
+    <p>안녕하세요</p>
+    <p>안녕하세요</p>
+    <p>안녕하세요</p>
+  </section>
 </template>
