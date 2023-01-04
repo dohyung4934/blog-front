@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.6rem;
 }
 
 .button-block {
@@ -47,4 +48,54 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.all-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert {
+  background-color: rgb(255, 255, 255);
+  width: 80vw;
+  min-height: 15rem;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.alert-content {
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  bottom: 5rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  height: 5rem;
+}
+
+.alert-footer>* {
+  flex: 1 0 auto;
+}
+
+.btn-gray {
+  background-color: #D9D9D9;
+  color: #FFFFFF;
+}
+
+.btn-green {
+  background-color: #3CB371;
+  color: #FFFFFF;
 }

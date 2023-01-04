@@ -6,6 +6,8 @@ import lo01 from '@/views/publish/lo/lo01.vue'
 import lo02 from '@/views/publish/lo/lo02.vue'
 /** lo03 바텀시트 */
 import lo03 from '@/views/publish/lo/lo03.vue'
+/** lo04 알럿 */
+import lo04 from '@/views/publish/lo/lo04.vue'
 /** cm01 로그인 */
 import cm01 from '@/views/publish/cm/cm01.vue'
 /** cm02 로그인 */
@@ -34,6 +36,10 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'lo03',
         component: lo03
+      },
+      {
+        path: 'lo04',
+        component: lo04
       },
       {
         path: 'cm01',
