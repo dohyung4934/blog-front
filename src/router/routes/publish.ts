@@ -20,6 +20,12 @@ import sg01 from '@/views/publish/sg/sg01.vue'
 import di01 from '@/views/publish/di/di01.vue'
 /** di02 글 읽기 */
 import di02 from '@/views/publish/di/di02.vue'
+/** di03 글 쓰기 */
+import di03 from '@/views/publish/di/di03.vue'
+/** di04 글 관리 */
+import di04 from '@/views/publish/di/di04.vue'
+/** di05 글 삭제 확인 */
+import di05 from '@/views/publish/di/di05.vue'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -64,7 +70,19 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'di02',
         component: di02
-      }
+      },
+      {
+        path: 'di03',
+        component: di03
+      },
+      {
+        path: 'di04',
+        component: di04
+      },
+      {
+        path: 'di05',
+        component: di05
+      },
     ]
   }
 ]

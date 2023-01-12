@@ -32,10 +32,43 @@
 }
 
 .post {
+  flex: 1 0 auto;
   font-size: 2rem;
   padding: 2rem;
+  line-height: 3.2rem;
 }
 
-.post>p {
-  margin-bottom: 1rem;
+#post-editor {
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+  background-color: #ffffff85;
+  background-image:
+    repeating-linear-gradient(#FFFFFF, #FFFFFF 3rem, #acacac 3rem, #acacac 3.2rem);
+  background-attachment: local;
+  line-height: inherit;
+}
+
+.hide {
+  display: none;
+}
+
+.bottom-menu {
+  font-size: 2rem;
+}
+
+.bottom-menu>li {
+  padding: 1.8rem 0;
+}
+
+.bottom-menu>li>span {
+  padding-left: 2.6rem;
+}
+
+.bottom-menu>li:active {
+  background-color: rgb(238, 238, 238);
 }
