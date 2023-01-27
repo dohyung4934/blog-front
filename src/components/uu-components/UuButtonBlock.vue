@@ -1,5 +1,4 @@
 <!-- 버튼 -->
-
 <script setup lang="ts">
 const props = defineProps({
   text: {
@@ -7,8 +6,13 @@ const props = defineProps({
     default: '텍스트'
   }
 })
+const emit = defineEmits(['click'])
+
+function onClick() {
+  emit('click')
+}
 </script>
 
 <template>
-  <button class="button-block">{{ props.text }}</button>
+  <button type="button" class="button-block" @click="onClick">{{ props.text }}</button>
 </template>

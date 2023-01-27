@@ -10,19 +10,19 @@ const mbrNm = ref('홍길동')
 </script>
 
 <template>
-  <div>
+  <div class="all-menu">
     <!-- 로그인 상태 -->
     <template v-if="isLogin">
-      <header v-if="isLogin" class="green-bg box-padding text-size-medium">
+      <header class="green-bg box-padding text-size-medium">
         <div class="color-page-header-top">
-          <button class="text-link">로그아웃</button>
-          <div class="page-header-text-icon">×</div>
+          <button type="button" class="text-link">로그아웃</button>
+          <button type="button" class="page-header-text-icon">×</button>
         </div>
         <div class="horizontal-list large-margin-top">
           <div class="profile-img"></div>
-          <div class="large-text margin-left">
+          <button type="button" class="large-text margin-left">
             <span>{{ mbrNm }}</span> 님 〉
-          </div>
+          </button>
         </div>
       </header>
 
@@ -38,10 +38,10 @@ const mbrNm = ref('홍길동')
     <!-- 로그아웃 상태 -->
     <header v-else class="green-bg box-padding text-size-medium">
       <div class="color-page-header-top justify-right">
-        <div class="page-header-text-icon">×</div>
+        <button type="button" class="page-header-text-icon">×</button>
       </div>
       <div class="horizontal-list large-margin-top">
-        <div class="large-text margin-left">로그인 해주세요 〉</div>
+        <button class="large-text margin-left">로그인 해주세요 〉</button>
       </div>
     </header>
     <!-- // 로그아웃 상태 -->
