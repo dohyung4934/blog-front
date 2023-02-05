@@ -24,13 +24,16 @@ const emit = defineEmits(['click-back', 'click-more'])
 
 const cmStore = useCmStore()
 
-function onClickBack() {
+/** 뒤로가기 클릭 emit */
+function emitBackClick() {
   emit('click-back')
 }
-function onClickMore() {
+/** 더보기 클릭 emit */
+function emitMoreMenuClick() {
   emit('click-more')
 }
-function onClickMenu() {
+/** 전체메뉴 클릭 emit */
+function emitMainMenuClick() {
   cmStore.isShowMenu = true
 }
 </script>
@@ -38,9 +41,9 @@ function onClickMenu() {
 <template>
   <header class="page-header box-padding">
     <button v-if="props.showBack" type="button" class="page-header-text-icon flex-fit"
-      @click="onClickBack">&lt;</button>
+      @click="emitBackClick">&lt;</button>
     <h3 class="page-header-title">{{ props.title }}</h3>
-    <button v-if="props.showMore" type="button" class="page-header-text-icon flex-fit" @click="onClickMore">⋮</button>
-    <button type="button" class="page-header-text-icon flex-fit" @click="onClickMenu">三</button>
+    <button v-if="props.showMore" type="button" class="page-header-text-icon flex-fit" @click="emitMoreMenuClick">⋮</button>
+    <button type="button" class="page-header-text-icon flex-fit" @click="emitMainMenuClick">三</button>
   </header>
 </template>

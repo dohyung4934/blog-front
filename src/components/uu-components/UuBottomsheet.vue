@@ -2,15 +2,15 @@
 <script setup lang="ts">
 const emit = defineEmits(['click-dim'])
 
-/** 딤 영역 클릭 */
-function onClickDim() {
+/** 딤 클릭 emit */
+function emitDimClick() {
   emit('click-dim')
 }
 </script>
 
 <template>
   <teleport to="body">
-    <div class="dim" @click="onClickDim"></div>
+    <div class="dim" @click="emitDimClick"></div>
     <article class="bottomsheet">
       <div class="horizontal-center">
         <div class="bottomsheet-handle"></div>

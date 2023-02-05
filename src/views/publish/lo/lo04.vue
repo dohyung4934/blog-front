@@ -34,7 +34,7 @@ function onClickBtn2() {
     </template>
     <template v-slot:footer>
       <uu-alert-button text="버튼1" @click="onClickBtn1" />
-      <uu-alert-button text="버튼2" main @click="onClickBtn2" />
+      <uu-alert-button text="버튼2" main-button-color @click="onClickBtn2" />
     </template>
   </uu-alert>
 </template>

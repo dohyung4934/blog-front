@@ -9,7 +9,7 @@ import { useCmStore } from '@/stores/cm/cm.module'
 const router = useRouter()
 const cmStore = useCmStore()
 
-function onClickStart() {
+function moveToLandingPage() {
   if (cmStore.isLogin) {
     router.push({ path: '/di/di01' })
   } else {
@@ -27,7 +27,7 @@ function onClickStart() {
       </div>
       <div class="guide-bold large-margin-top">쉽고 편리한 <br>핸드폰 속 일기장</div>
       <p class="guide-text small-margin-top">언제 어디서나 편리하게 <br>사용할 수 있는 디지털 일기장으로 <br>일상의 이야기를 기록해 보세요.</p>
-      <uu-button-block text="시작하기" class="large-margin-top" @click="onClickStart" />
+      <uu-button-block text="시작하기" class="large-margin-top" @click="moveToLandingPage" />
     </section>
   </div>
 </template>

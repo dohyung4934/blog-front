@@ -15,25 +15,21 @@ const emit = defineEmits(['update:is-show'])
 
 const isShowDelete = ref(false)
 
-function onClickDelete() {
+/** 삭제 확인 알럿 출력 */
+function showDeleteConfirmAlert() {
   isShowDelete.value = true
 }
-function setHide() {
+/** 글 관리 바텀시트 숨기기 */
+function hideDiaryManagementBottomsheet() {
   emit('update:is-show', false)
-}
-function onClickDim() {
-  setHide()
-}
-function onIsDelete() {
-  setHide()
 }
 </script>
 
 <template>
-  <uu-bottomsheet v-if="props.isShow" @click-dim="onClickDim">
+  <uu-bottomsheet v-if="props.isShow" @click-dim="hideDiaryManagementBottomsheet">
     <ul class="bottom-menu">
-      <li @click="onClickDelete"><span>글 삭제</span></li>
+      <li @click="showDeleteConfirmAlert"><span>글 삭제</span></li>
     </ul>
   </uu-bottomsheet>
-  <di05 v-model:show="isShowDelete" @is-delete="onIsDelete" />
+  <di05 v-model:show="isShowDelete" @is-delete="hideDiaryManagementBottomsheet" />
 </template>

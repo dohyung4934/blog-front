@@ -11,23 +11,24 @@ const props = defineProps({
 })
 const emit = defineEmits(['update:show', 'is-delete'])
 
-function hideAlert() {
+function hideDeleteConfirmAlert() {
   emit('update:show', false)
 }
-function onClickDelete() {
-  hideAlert()
+/** 삭제 진행 */
+function proceedDeletion() {
+  hideDeleteConfirmAlert()
   emit('is-delete')
 }
 </script>
 
 <template>
-  <uu-alert v-if="props.show" @click-dim="hideAlert">
+  <uu-alert v-if="props.show" @click-dim="hideDeleteConfirmAlert">
     <template v-slot>
       <p>정말로 삭제하시겠습니까?</p>
     </template>
     <template v-slot:footer>
-      <uu-alert-button text="취소" @click="hideAlert" />
-      <uu-alert-button text="삭제" main @click="onClickDelete" />
+      <uu-alert-button text="취소" @click="hideDeleteConfirmAlert" />
+      <uu-alert-button text="삭제" main-button-color @click="proceedDeletion" />
     </template>
   </uu-alert>
 </template>

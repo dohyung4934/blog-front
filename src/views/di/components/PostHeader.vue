@@ -10,15 +10,17 @@ const router = useRouter()
 
 const isShowMore = ref(false)
 
-function onClickBack() {
+/** 라우터 뒤로 이동 */
+function moveRouterBack() {
   router.back()
 }
-function onClickMore() {
+/** 글 관리 바텀시트 출력 */
+function showDiaryManagementBottomsheet() {
   isShowMore.value = true
 }
 </script>
 
 <template>
-  <basic-header title="2022년 12월 4일" show-back show-more @click-back="onClickBack" @click-more="onClickMore" />
+  <basic-header title="2022년 12월 4일" show-back show-more @click-back="moveRouterBack" @click-more="showDiaryManagementBottomsheet" />
   <di04 v-model:is-show="isShowMore" />
 </template>

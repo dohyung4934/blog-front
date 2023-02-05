@@ -8,11 +8,12 @@ const props = defineProps({
 })
 const emit = defineEmits(['click'])
 
-function onClick() {
+/** 버튼 클릭 emit */
+function emitButtonClick() {
   emit('click')
 }
 </script>
 
 <template>
-  <button type="button" class="button-block" @click="onClick">{{ props.text }}</button>
+  <button type="button" class="button-block" @click="emitButtonClick">{{ props.text }}</button>
 </template>

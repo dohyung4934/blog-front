@@ -1,7 +1,8 @@
 <!-- 알럿 버튼 -->
 <script setup lang="ts">
 const props = defineProps({
-  main: {
+  /** 주 버튼 색깔 */
+  mainButtonColor: {
     type: Boolean,
     default: false
   },
@@ -12,15 +13,15 @@ const props = defineProps({
 })
 const emit = defineEmits(['click'])
 
-/** 버튼 클릭 */
-function onClick() {
+/** 버튼 클릭 emit */
+function emitButtonClick() {
   emit('click')
 }
 </script>
 
 <template>
   <button type="button" :class="{
-  'btn-gray': !props.main,
-  'btn-green': props.main
-}" @click="onClick">{{ text }}</button>
+  'btn-gray': !props.mainButtonColor,
+  'btn-green': props.mainButtonColor
+}" @click="emitButtonClick">{{ text }}</button>
 </template>

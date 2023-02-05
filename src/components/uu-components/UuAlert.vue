@@ -4,15 +4,15 @@ import UuAlertButton from '@/components/uu-components/UuAlertButton.vue'
 
 const emit = defineEmits(['click-dim'])
 
-/** 딤 영역 클릭 */
-function onClickDim() {
+/** 딤 클릭 emit */
+function emitDimClick() {
   emit('click-dim')
 }
 </script>
 
 <template>
   <teleport to="body">
-    <div class="dim all-center" @click="onClickDim">
+    <div class="dim all-center" @click="emitDimClick">
       <article class="alert" @click.stop>
         <div class="alert-content">
           <div>
@@ -21,7 +21,7 @@ function onClickDim() {
         </div>
         <div class="alert-footer">
           <slot name="footer">
-            <uu-alert-button text="확인" main @click="onClickDim" />
+            <uu-alert-button text="확인" main-button-color @click="emitDimClick" />
           </slot>
         </div>
       </article>

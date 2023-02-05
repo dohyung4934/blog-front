@@ -6,10 +6,10 @@ import BasicHeader from '@/components/layout/BasicHeader.vue'
 
 const router = useRouter()
 
-function chance(date: number) {
+function getRandomBoolean(date: number) {
   return Math.random() > 0.5
 }
-function onClickDate() {
+function moveToDiaryEntryPage() {
   router.push({ path: '/di/di02' })
 }
 </script>
@@ -28,9 +28,9 @@ function onClickDate() {
           <span>{{ day }}</span>
         </div>
         <div v-for="i in 4" :key="i" class="cal-date"></div>
-        <button v-for="date in 31" :key="date" type="button" class="cal-date" @click="onClickDate">
+        <button v-for="date in 31" :key="date" type="button" class="cal-date" @click="moveToDiaryEntryPage">
           <span class="text-center">{{ date }}</span>
-          <span :class="{ 'cal-dot-hide': chance(date) }" class="text-center cal-dot">.</span>
+          <span :class="{ 'cal-dot-hide': getRandomBoolean(date) }" class="text-center cal-dot">.</span>
         </button>
       </div>
     </section>

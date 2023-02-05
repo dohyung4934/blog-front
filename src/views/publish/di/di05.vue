@@ -24,7 +24,7 @@ function onClickDelete() {
     </template>
     <template v-slot:footer>
       <uu-alert-button text="취소" @click="hideAlert" />
-      <uu-alert-button text="삭제" main @click="onClickDelete" />
+      <uu-alert-button text="삭제" main-button-color @click="onClickDelete" />
     </template>
   </uu-alert>
 </template>
