@@ -34,6 +34,10 @@ async function getPostDetail(id: string) {
   <a href="/post">◁ 뒤로가기</a>
   <template v-if="postDetail !== null">
     <h2>{{ postDetail.title }}</h2>
+    <div>
+      <a href="/post/edit">수정</a>
+      <a href="#">삭제</a>
+    </div>
     <p>{{ postDetail.contents }}</p>
   </template>
 </template>
