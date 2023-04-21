@@ -1,6 +1,9 @@
-const apiPrefix = 'http://localhost:8080'
+const API_PREFIX = import.meta.env.VITE_API_PREFIX
+const API_REQUEST_HEADERS = {
+  "Content-Type": "application/json; charset=utf-8"
+}
 
-export async function requestApi <T> (path: string, method: string): Promise<T> {
-    const result = await fetch(apiPrefix + path, { method })
-    return await result.json() as T
+export async function requestApi<T>(path: string, method: string, body?: BodyInit): Promise<T> {
+  const result = await fetch(API_PREFIX + path, { method, body, headers: API_REQUEST_HEADERS })
+  return await result.json() as T
 }
