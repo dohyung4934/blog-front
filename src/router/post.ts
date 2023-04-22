@@ -18,6 +18,10 @@ export const PostRoutes: RouteRecordRaw[] = [
       {
         path: 'new',
         component: PostNew
+      },
+      {
+        path: ':id/edit',
+        component: PostNew
       }
     ]
   }
