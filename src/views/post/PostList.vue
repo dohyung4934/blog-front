@@ -1,8 +1,10 @@
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
-import { requestApi } from './api'
+import { useAuthStore } from '@/stores/auth'
+import { requestApi } from '@/api'
 import type { PostListDto, PostListResponse } from './dto/post.dto'
 
+const authStore = useAuthStore()
 const postList = ref<PostListDto[]>([])
 
 onMounted(async () => {
@@ -21,11 +23,11 @@ async function requestPostList() {
 
 <template>
   <h2>게시글 목록</h2>
-  <a href="/post/new">📝 게시글 등록</a>
+  <router-link v-if="authStore.isLoggedIn" to="/post/new">📝 게시글 등록</router-link>
   <section>
     <article v-for="post of postList" :key="post.id">
       <h3>
-        <a :href="`/post/${post.id}`">{{ post.title }}</a>
+        <router-link :to="`/post/${post.id}`">{{ post.title }}</router-link>
       </h3>
     </article>
   </section>

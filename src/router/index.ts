@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { PostRoutes } from './post'
+import { UserRoutes } from './login'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,7 +9,8 @@ const router = createRouter({
       path: '/',
       redirect: '/post'
     },
-    ...PostRoutes
+    ...PostRoutes,
+    ...UserRoutes
   ]
 })
 

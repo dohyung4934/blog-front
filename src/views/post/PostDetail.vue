@@ -1,11 +1,13 @@
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { requestApi } from './api'
+import { useAuthStore } from '@/stores/auth'
+import { requestApi } from '@/api'
 import type { PostDetailResponse, PostDetailDto } from './dto/post-detail.dto'
 
 const router = useRouter()
 const route = useRoute()
+const authStore = useAuthStore()
 
 const postId = ref('')
 const postDetail = ref<PostDetailDto | null>(null)
@@ -39,13 +41,14 @@ async function deletePost() {
 </script>
 
 <template>
-  <a href="/post">◁ 뒤로가기</a>
+  <router-link to="/post">◁ 뒤로가기</router-link>
   <template v-if="postDetail !== null">
     <h2>{{ postDetail.title }}</h2>
-    <div>
-      <a :href="`/post/${postId}/edit`">수정</a>
+    <div v-if="authStore.isLoggedIn">
+      <router-link :to="`/post/${postId}/edit`">수정</router-link>
       <a href="#" @click="deletePost">삭제</a>
     </div>
+    <small>작성자: {{ postDetail.author }}</small>
     <p>{{ postDetail.contents }}</p>
   </template>
 </template>

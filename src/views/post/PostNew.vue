@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { requestApi } from './api'
+import { requestApi } from '@/api'
 import type { PostDetailResponse } from './dto/post-detail.dto'
 import type { PostCreateResponse } from './dto/post-create.dto'
 
@@ -19,7 +19,7 @@ onMounted(() => {
   initInputFields()
 })
 
-function readRouteParams () {
+function readRouteParams() {
   const paramVal = route.params.id
   if (typeof paramVal === 'string') {
     postId.value = paramVal
@@ -28,19 +28,19 @@ function readRouteParams () {
   }
 }
 
-async function initInputFields () {
+async function initInputFields() {
   if (isEditMode.value) {
     await setPostContents()
   }
 }
 
-async function setPostContents () {
+async function setPostContents() {
   const { postDetail } = await requestApi<PostDetailResponse>(`/post/${postId.value}`, 'GET')
   titleInput.value = postDetail.title
   contentInput.value = postDetail.contents
 }
 
-async function updatePost () {
+async function updatePost() {
   const postPayload = {
     title: titleInput.value,
     contents: contentInput.value
@@ -59,7 +59,7 @@ async function registerPost() {
 </script>
 
 <template>
-  <a href="/post">◁ 뒤로가기</a>
+  <router-link to="/post">◁ 뒤로가기</router-link>
   <h2 v-if="isEditMode">게시글 수정</h2>
   <h2 v-else>게시글 등록</h2>
   <input type="text" v-model="titleInput" class="full-line" placeholder="글 제목">
@@ -71,9 +71,3 @@ async function registerPost() {
     <span>등록</span>
   </button>
 </template>
-
-<style>
-.full-line {
-  display: block;
-}
-</style>
